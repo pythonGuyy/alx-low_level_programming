@@ -6,29 +6,31 @@
  */
 int main(void)
 {
-	int c;
-	int d = 0;
+	int a = '0';
+	int b = '0';
 
-	while (d < 0)
+	while (a <= 9)
 	{
-		c = 0;
-		while (c < 0)
+		while (b <= 9)
 		{
-			if (d != c && d < c)
+			if (!(a > b || a == b))
 			{
-				putchar('0' + c);
-				putchar('0' + d);
+				putchar(a);
+				putchar(b);
 
-				if (c + d != 17)
+				if (a == 8 && b == 9)
+				{
+					putchar('\n');
+				}
+				else
 				{
 					putchar(',');
 					putchar(' ');
-				}
 			}
-			c++;
+			b++;
 		}
-		d++;
+		b = '0';
+		a++;
 	}
-	putchar('\n');
 	return (0);
 }
